@@ -57,7 +57,7 @@ void freeList(Node** head) {
 
 int main() {
     Node* head = NULL;
-    int num_files = 20;
+    int num_files = 15;
     char filename_buffer[50];
 
     // Cria a lista encadeada com nomes de arquivos fictícios
@@ -69,12 +69,12 @@ int main() {
     // Região paralela para percorrer e processar a lista com tarefas
     #pragma omp parallel
     {
-        #pragma omp single
+        #pragma omp single 
         {
-            printf("As tarefas foeam processadas pela thread: %d\n", omp_get_thread_num());
+            printf("As tarefas foram processadas pela thread: %d\n", omp_get_thread_num());
             Node* current = head;
             while (current != NULL) {
-                #pragma omp taskwait
+                #pragma omp task
                 {
                     processNode(current);
                 }
