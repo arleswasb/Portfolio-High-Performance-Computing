@@ -1,6 +1,4 @@
-# Disciplina: Sistemas Distribuídos
-**Professor:** samuel xavier de souza
-**projeto SD 01**
+
 
 ## Descrição da tarefa
 Implemente duas versões da multiplicação de matriz por vetor (MxV) em C: uma com acesso à matriz por linhas (linha externa, coluna interna) e outra por colunas (coluna Externa, linha interna). Meça o tempo de execução de cada versão com uma função apropriada e execute testes com diferentes tamanhos de matriz. Identifique a partir de que tamanho os tempos passam a divergir significamente e explique por que isso ocorre, relacionando suas observações com o uso da memória cache e o padrão de acesso à memória.
@@ -69,6 +67,16 @@ Nesta fase final, a importância de um algoritmo consciente do hardware torna-se
 
 ## Conclusão Geral
 A divergência de performance entre os métodos se inicia de forma mensurável quando o tamanho dos dados excede a capacidade do cache L2, forçando o uso do cache L3. A diferença torna-se extrema quando os dados ultrapassam a capacidade do cache L3, tornando o acesso à memória RAM o principal gargalo. Isso prova que alinhar o padrão de acesso à memória do software com a organização física dos dados e a hierarquia de cache do hardware é um princípio fundamental para o desenvolvimento de aplicações de alto desempenho.
+
+## Autor
+
+  * **Werbert Arles de Souza Barradas**
+
+-----
+
+**Disciplina:** DCA3703 - Programação Paralela - T01 (2025.2)  
+**Docente:** Professor Doutor Samuel Xavier de Souza  
+**Instituição:** Universidade Federal do Rio Grande do Norte (UFRN)
 
 ## Grafico Duplo
 
