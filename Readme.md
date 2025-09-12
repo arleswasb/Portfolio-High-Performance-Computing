@@ -16,7 +16,7 @@ O programa implementado cria uma lista encadeada de "arquivos" fictícios e util
 
 * **Modelo de Tarefas do OpenMP**: Uso da diretiva `#pragma omp task` para criar unidades de trabalho independentes.
 * **Paralelismo em Estruturas de Dados Dinâmicas**: Aplicação de técnicas de paralelismo a estruturas como listas encadeadas.
-* **Sincronização de Tarefas**: Uso da diretiva `#pragma omp single` para serializar a criação de tarefas e evitar condições de corrida[cite: 817, 818].
+* **Sincronização de Tarefas**: Uso da diretiva `#pragma omp single` para serializar a criação de tarefas e evitar condições de corrida.
 * **Não-Determinismo**: Análise da ordem de execução das tarefas, que varia a cada execução do programa.
 * **Barreiras Implícitas**: Compreensão de como o final de uma região `#pragma omp parallel` age como um ponto de sincronização para todas as tarefas geradas dentro dela.
 
@@ -42,31 +42,32 @@ gcc -fopenmp -o list_task list_task.c
 ./list_task
 ```
 
-[cite\_start]A saída do programa mostrará qual thread foi responsável por criar as tarefas e, em seguida, a ordem (não determinística) em que cada "arquivo" (nó) foi processado pelas threads disponíveis[cite: 907].
+A saída do programa mostrará qual thread foi responsável por criar as tarefas e, em seguida, a ordem (não determinística) em que cada "arquivo" (nó) foi processado pelas threads disponíveis.
 
 ## Análise da Implementação
 
 A solução se baseia na combinação estratégica de três diretivas OpenMP para garantir a correção e a eficiência:
 
-1.  [cite\_start]`#pragma omp parallel`: Cria uma equipe de threads que executará o trabalho[cite: 816, 827].
-2.  [cite\_start]`#pragma omp single`: Garante que o bloco de código que percorre a lista encadeada seja executado por **apenas uma thread**[cite: 817, 830]. [cite\_start]Isso é crucial para evitar que múltiplas threads tentem percorrer a lista ao mesmo tempo, o que causaria uma condição de corrida e a criação de tarefas duplicadas[cite: 818, 902].
-3.  [cite\_start]`#pragma omp task`: Dentro do bloco `single`, para cada nó encontrado na lista, esta diretiva empacota a função de processamento (`processNode`) como uma tarefa independente[cite: 819, 833]. [cite\_start]Essas tarefas são colocadas em um "pool" e distribuídas dinamicamente pelo runtime do OpenMP para qualquer thread ociosa da equipe[cite: 834].
+1.  `#pragma omp parallel`: Cria uma equipe de threads que executará o trabalho.
+2.  `#pragma omp single`: Garante que o bloco de código que percorre a lista encadeada seja executado por **apenas uma thread**. Isso é crucial para evitar que múltiplas threads tentem percorrer a lista ao mesmo tempo, o que causaria uma condição de corrida e a criação de tarefas duplicadas.
+3.  `#pragma omp task`: Dentro do bloco `single`, para cada nó encontrado na lista, esta diretiva empacota a função de processamento (`processNode`) como uma tarefa independente. Essas tarefas são colocadas em um "pool" e distribuídas dinamicamente pelo runtime do OpenMP para qualquer thread ociosa da equipe.
 
 ### Principais Conclusões do Experimento
 
-  * **Todos os nós são processados?** Sim. [cite\_start]A travessia da lista dentro de uma região `single` garante que cada nó seja visitado e uma tarefa seja criada para ele[cite: 896, 897].
-  * **Algum nó é processado mais de uma vez?** Não. [cite\_start]A diretiva `single` é a chave para a unicidade, pois apenas uma thread gera as tarefas, evitando duplicação[cite: 900, 901].
-  * **A ordem de execução muda?** Sim. [cite\_start]A ordem em que os nós são processados é não-determinística, pois o OpenMP agenda as tarefas com base na disponibilidade das threads, o que pode variar a cada execução[cite: 906, 909].
-  * [cite\_start]**Como a correção é garantida?** Pela combinação da criação serial de tarefas (`single`) com a execução paralela das mesmas (`task`), e pela barreira implícita no final da região `parallel`, que assegura que o programa só prossiga após a conclusão de todas as tarefas[cite: 914, 917].
+  * **Todos os nós são processados?** Sim. A travessia da lista dentro de uma região `single` garante que cada nó seja visitado e uma tarefa seja criada para ele.
+  * **Algum nó é processado mais de uma vez?** Não. A diretiva `single` é a chave para a unicidade, pois apenas uma thread gera as tarefas, evitando duplicação.
+  * **A ordem de execução muda?** Sim. A ordem em que os nós são processados é não-determinística, pois o OpenMP agenda as tarefas com base na disponibilidade das threads, o que pode variar a cada execução.
+  * **Como a correção é garantida?** Pela combinação da criação serial de tarefas (`single`) com a execução paralela das mesmas (`task`), e pela barreira implícita no final da região `parallel`, que assegura que o programa só prossiga após a conclusão de todas as tarefas.
 
 ## Autor
 
-  * **Werbert Arles de Souza Barradas** ---
-    **Disciplina:** DCA3703 - Programação Paralela - T01 (2025.2)  
-    **Docente:** Professor Doutor Samuel Xavier de Souza  
-    **Instituição:** Universidade Federal do Rio Grande do Norte (UFRN)
+  * **Werbert Arles de Souza Barradas**
 
-<!-- end list -->
+-----
+
+**Disciplina:** DCA3703 - Programação Paralela - T01 (2025.2)  
+**Docente:** Professor Doutor Samuel Xavier de Souza  
+**Instituição:** Universidade Federal do Rio Grande do Norte (UFRN)
 
 ```
 ```
