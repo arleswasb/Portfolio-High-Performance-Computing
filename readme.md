@@ -1,12 +1,4 @@
-Entendido.
 
-Verifiquei o `README.md` do Projeto 06 que gerei anteriormente, e ele também já foi criado sem as citações.
-
-De qualquer forma, para garantir que você tenha a versão final e limpa, apresento novamente o código `README.md` completo para o Projeto 06.
-
------
-
-````markdown
 # Projeto 06: Sincronização e Gerenciamento de Escopo em OpenMP
 
 ![Linguagem](https://img.shields.io/badge/Linguagem-C-blue.svg)
