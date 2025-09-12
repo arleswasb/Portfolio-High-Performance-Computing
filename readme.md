@@ -158,4 +158,14 @@ Após a compilação bem-sucedida, execute o programa com:
 
 ## 📚 Conclusão
 
-O experimento demonstrou claramente o potencial de ganho de desempenho do OpenMP, gerando um speedup de 2.01x. Ficou evidente que o acesso não sincronizado a recursos compartilhados leva a resultados incorretos. Compreender e aplicar mecanismos de sincronização, como a cláusula `reduction`, é fundamental para o desenvolvimento de software paralelo que seja não apenas rápido, mas também correto[.
+O experimento demonstrou claramente o potencial de ganho de desempenho do OpenMP, gerando um speedup de 2.01x. Ficou evidente que o acesso não sincronizado a recursos compartilhados leva a resultados incorretos. Compreender e aplicar mecanismos de sincronização, como a cláusula `reduction`, é fundamental para o desenvolvimento de software paralelo que seja não apenas rápido, mas também correto.
+
+## Autor
+
+  * **Werbert Arles de Souza Barradas**
+
+-----
+
+**Disciplina:** DCA3-703 - Programação Paralela - T01 (2025.2)  
+**Docente:** Professor Doutor Samuel Xavier de Souza  
+**Instituição:** Universidade Federal do Rio Grande do Norte (UFRN)
