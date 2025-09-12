@@ -114,5 +114,15 @@ A análise dos dados revela uma complexa interação entre o estilo de codifica�
 
 **Conclusão Final:** A programação de alto desempenho é uma sinergia. O programador deve escrever código que exponha o paralelismo (evitando dependências), e o compilador deve ser instruído (com flags de otimização) a explorar esse potencial ao máximo, aplicando otimizações avançadas como a vetorização.
 
+## Autor
+
+  * **Werbert Arles de Souza Barradas**
+
+-----
+
+**Disciplina:** DCA3703 - Programação Paralela - T01 (2025.2)  
+**Docente:** Professor Doutor Samuel Xavier de Souza  
+**Instituição:** Universidade Federal do Rio Grande do Norte (UFRN)
+
 ## Gráfico de Desempenho
 ![Gráfico Comparativo de de Desempenho](desempenho.png)
