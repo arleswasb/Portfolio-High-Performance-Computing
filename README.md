@@ -68,9 +68,16 @@ A estrutura de pastas do projeto está organizada da seguinte forma:
 └── README.md     # Documentação do projeto
 ```
 
-## ✒️ Autor
+## Autor
 
-- **[Werbert arles]** - (https://github.com/arleswasb/)
+  * **Werbert Arles de Souza Barradas**
+
+-----
+
+**Disciplina:** DCA3-703 - Programação Paralela - T01 (2025.2)  
+**Docente:** Professor Doutor Samuel Xavier de Souza  
+**Instituição:** Universidade Federal do Rio Grande do Norte (UFRN)
+
 
 ## 💻 imagens
 
