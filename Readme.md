@@ -8,17 +8,17 @@
 
 ## Descrição do Projeto
 
-[cite_start]Este projeto, desenvolvido para a disciplina de Programação Paralela (DCA3703), explora a eficácia do modelo de tarefas (`task`) da API OpenMP para o processamento de estruturas de dados dinâmicas, como listas encadeadas[cite: 791, 794]. [cite_start]Diferente de laços iterativos com um número fixo de repetições, o processamento de nós de uma lista exige um modelo de paralelismo mais flexível, onde unidades de trabalho podem ser criadas e agendadas dinamicamente[cite: 792, 793].
+Este projeto, desenvolvido para a disciplina de Programação Paralela (DCA3703), explora a eficácia do modelo de tarefas (`task`) da API OpenMP para o processamento de estruturas de dados dinâmicas, como listas encadeadas. Diferente de laços iterativos com um número fixo de repetições, o processamento de nós de uma lista exige um modelo de paralelismo mais flexível, onde unidades de trabalho podem ser criadas e agendadas dinamicamente.
 
-[cite_start]O programa implementado cria uma lista encadeada de "arquivos" fictícios e utiliza uma região paralela para criar uma tarefa para processar cada nó da lista, demonstrando uma abordagem robusta para paralelizar cargas de trabalho não estruturadas[cite: 795].
+O programa implementado cria uma lista encadeada de "arquivos" fictícios e utiliza uma região paralela para criar uma tarefa para processar cada nó da lista, demonstrando uma abordagem robusta para paralelizar cargas de trabalho não estruturadas.
 
 ## Conceitos Abordados
 
-* [cite_start]**Modelo de Tarefas do OpenMP**: Uso da diretiva `#pragma omp task` para criar unidades de trabalho independentes[cite: 832].
-* [cite_start]**Paralelismo em Estruturas de Dados Dinâmicas**: Aplicação de técnicas de paralelismo a estruturas como listas encadeadas[cite: 791].
-* [cite_start]**Sincronização de Tarefas**: Uso da diretiva `#pragma omp single` para serializar a criação de tarefas e evitar condições de corrida[cite: 817, 818].
-* [cite_start]**Não-Determinismo**: Análise da ordem de execução das tarefas, que varia a cada execução do programa[cite: 906, 907].
-* [cite_start]**Barreiras Implícitas**: Compreensão de como o final de uma região `#pragma omp parallel` age como um ponto de sincronização para todas as tarefas geradas dentro dela[cite: 841, 917].
+* **Modelo de Tarefas do OpenMP**: Uso da diretiva `#pragma omp task` para criar unidades de trabalho independentes.
+* **Paralelismo em Estruturas de Dados Dinâmicas**: Aplicação de técnicas de paralelismo a estruturas como listas encadeadas.
+* **Sincronização de Tarefas**: Uso da diretiva `#pragma omp single` para serializar a criação de tarefas e evitar condições de corrida[cite: 817, 818].
+* **Não-Determinismo**: Análise da ordem de execução das tarefas, que varia a cada execução do programa.
+* **Barreiras Implícitas**: Compreensão de como o final de uma região `#pragma omp parallel` age como um ponto de sincronização para todas as tarefas geradas dentro dela.
 
 ## Estrutura do Projeto
 
