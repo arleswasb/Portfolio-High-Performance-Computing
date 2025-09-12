@@ -1,6 +1,3 @@
-# Disciplina: Programação Paralela
-**Professor:** Samuel Xavier de Souza
-**Projeto PP 03**
 
 ## Descrição da Tarefa
 
@@ -96,3 +93,13 @@ Os gráficos abaixo consolidam a análise de desempenho do experimento de cálcu
 Ambos os experimentos, um numérico e outro visual, validam o *trade-off* fundamental entre custo computacional e precisão. Aumentar a precisão — seja diminuindo o erro no cálculo de π ou melhorando a fidelidade visual de uma imagem — tem um custo de processamento associado.
 
 A otimização com paralelismo em nível de instrução (ILP), demonstrada no cálculo de π, é a ferramenta para gerenciar este equilíbrio.Ao permitir que o hardware opere de forma mais eficiente , a otimização não elimina o *trade-off*, mas torna o custo de alcançar alta precisão mais baixo e computacionalmente mais viável.
+
+## Autor
+
+  * **Werbert Arles de Souza Barradas**
+
+-----
+
+**Disciplina:** DCA3703 - Programação Paralela - T01 (2025.2)  
+**Docente:** Professor Doutor Samuel Xavier de Souza  
+**Instituição:** Universidade Federal do Rio Grande do Norte (UFRN)
