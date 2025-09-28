@@ -50,7 +50,7 @@ int main() {
         {
             // 1. CÁLCULO PRINCIPAL: Otimizado com for, collapse e schedule(static)
             // As variáveis de cálculo são privadas para cada thread por padrão dentro do loop
-            #pragma omp for collapse(2) schedule(dynamic)
+            #pragma omp for collapse(2) schedule(static)//substituido por guided ou dynamic
             for (int i = 1; i < NX-1; i++) {
                 for (int j = 1; j < NY-1; j++) {
                     double d2u_dx2 = (u[i+1][j] - 2.0*u[i][j] + u[i-1][j]);
