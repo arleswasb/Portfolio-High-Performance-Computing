@@ -36,9 +36,10 @@ gcc -o navier_stokes_simul_serial_tempo.c -lm -fopenmp -O3
 
 # Para compilar a versão paralela otimizada
 gcc -o navier_stokes_paralelo_otm.c -lm -fopenmp -O3
-'''
 
-## Autor
+''
+
+### Autor
 
   * **Werbert Arles de Souza Barradas**
 
