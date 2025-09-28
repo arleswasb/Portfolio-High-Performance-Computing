@@ -2,9 +2,9 @@
 
 # --- PARÂMETROS DE CONFIGURAÇÃO ---
 # Nome do arquivo de código-fonte C PARALELO
-CODIGO_C="navier_stokes_paralelo_otm1.c"
+CODIGO_C="navier_stokes_paralelo_ingenua.c"
 # Nome que daremos ao programa executável
-EXECUTAVEL="./navier_stokes_paralelo_colapse_auto_otm1"
+EXECUTAVEL="./navier_stokes_paralelo_ingenua"
 # Número de vezes que cada configuração será executada
 NUM_REPETICOES=5
 # Lista de números de threads para testar

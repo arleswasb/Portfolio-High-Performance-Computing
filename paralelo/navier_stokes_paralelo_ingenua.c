@@ -5,7 +5,7 @@
 
 #define NX 512
 #define NY 512
-#define NT 2000
+#define NT 6000
 #define DT 0.001
 #define NU 0.01
 
@@ -41,10 +41,9 @@ int main() {
     double start_time = omp_get_wtime();
     
     // Simulação principal
-    // Criamos a região paralela aqui fora para evitar o overhead de criar/destruir threads 2000 vezes
     for (int step = 0; step < NT; step++) {
-        // CORREÇÃO: #pragma omp parallel for cria a região paralela e distribui o laço 'i' 
-        #pragma omp parallel for schedule(static, 10)
+       
+        #pragma omp parallel for
         for (int i = 1; i < NX-1; i++) {
             for (int j = 1; j < NY-1; j++) {
                 double d2u_dx2 = (u[i+1][j] - 2.0*u[i][j] + u[i-1][j]);

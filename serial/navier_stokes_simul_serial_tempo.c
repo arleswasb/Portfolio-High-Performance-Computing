@@ -5,7 +5,7 @@
 
 #define NX 512
 #define NY 512
-#define NT 2000
+#define NT 6000
 #define DT 0.001
 #define NU 0.01
 
