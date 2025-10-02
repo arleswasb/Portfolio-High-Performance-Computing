@@ -1,0 +1,52 @@
+Iniciando o Benchmark MPI. Resultados em benchmark_results_final.csv
+
+--- Testando Matriz 1024x1024 ---
+  [OK] P=2 | Tempo: 0.005451s
+  [OK] P=4 | Tempo: 0.005715s
+  [OK] P=8 | Tempo: 0.006954s
+  [OK] P=16 | Tempo: 0.003889s
+  [OK] P=32 | Tempo: 0.004168s
+  [OK] P=64 | Tempo: 0.002556s
+
+--- Testando Matriz 2048x2048 ---
+  [OK] P=2 | Tempo: 0.015577s
+  [OK] P=4 | Tempo: 0.013228s
+  [OK] P=8 | Tempo: 0.022506s
+  [OK] P=16 | Tempo: 0.008692s
+  [OK] P=32 | Tempo: 0.009066s
+  [OK] P=64 | Tempo: 0.006790s
+
+--- Testando Matriz 4096x4096 ---
+  [OK] P=2 | Tempo: 0.057118s
+  [OK] P=4 | Tempo: 0.041088s
+  [OK] P=8 | Tempo: 0.045669s
+  [OK] P=16 | Tempo: 0.024216s
+  [OK] P=32 | Tempo: 0.023628s
+  [OK] P=64 | Tempo: 0.021343s
+
+--- Testando Matriz 6144x6144 ---
+  [OK] P=2 | Tempo: 0.123183s
+  [OK] P=4 | Tempo: 0.084884s
+  [OK] P=8 | Tempo: 0.080437s
+  [OK] P=16 | Tempo: 0.048768s
+  [OK] P=32 | Tempo: 0.049032s
+  [OK] P=64 | Tempo: 0.044990s
+
+--- Testando Matriz 8192x8192 ---
+  [OK] P=2 | Tempo: 0.216353s
+  [OK] P=4 | Tempo: 0.150529s
+  [OK] P=8 | Tempo: 0.135856s
+  [OK] P=16 | Tempo: 0.083669s
+  [OK] P=32 | Tempo: 0.077264s
+  [OK] P=64 | Tempo: 0.061784s
+
+--- Testando Matriz 16384x16384 ---
+  [OK] P=2 | Tempo: 0.857643s
+  [OK] P=4 | Tempo: 0.576503s
+  [OK] P=8 | Tempo: 0.539119s
+  [OK] P=16 | Tempo: 0.200371s
+  [OK] P=32 | Tempo: 0.168490s
+  [OK] P=64 | Tempo: 0.155889s
+
+Benchmark concluído.
+Para analisar os resultados, use o arquivo 'benchmark_results_final.csv' com seu script Python.
