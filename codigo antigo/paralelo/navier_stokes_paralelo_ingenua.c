@@ -23,7 +23,7 @@ int main() {
         v_new[i] = (double*)malloc(NY * sizeof(double));
     }
     
-    // Inicialização (pode ser paralelizada também, mas o ganho é desprezível)
+    // Inicialização
     #pragma omp parallel for
     for (int i = 0; i < NX; i++) {
         for (int j = 0; j < NY; j++) {
@@ -43,53 +43,53 @@ int main() {
     // Simulação principal
     for (int step = 0; step < NT; step++) {
        
+        // Etapa 1: Cálculo principal (paralelo)
         #pragma omp parallel for
         for (int i = 1; i < NX-1; i++) {
             for (int j = 1; j < NY-1; j++) {
                 double d2u_dx2 = (u[i+1][j] - 2.0*u[i][j] + u[i-1][j]);
                 double d2u_dy2 = (u[i][j+1] - 2.0*u[i][j] + u[i][j-1]);
-                    double d2v_dx2 = (v[i+1][j] - 2.0*v[i][j] + v[i-1][j]);
-                    double d2v_dy2 = (v[i][j+1] - 2.0*v[i][j] + v[i][j-1]);
-                    
-                    u_new[i][j] = u[i][j] + DT * NU * (d2u_dx2 + d2u_dy2);
-                    v_new[i][j] = v[i][j] + DT * NU * (d2v_dx2 + d2v_dy2);
+                double d2v_dx2 = (v[i+1][j] - 2.0*v[i][j] + v[i-1][j]);
+                double d2v_dy2 = (v[i][j+1] - 2.0*v[i][j] + v[i][j-1]);
+                
+                u_new[i][j] = u[i][j] + DT * NU * (d2u_dx2 + d2u_dy2);
+                v_new[i][j] = v[i][j] + DT * NU * (d2v_dx2 + d2v_dy2);
+            }
+        }
+            
+        // Etapa 2: Condições de contorno (paralelo)
+        // CORREÇÃO: Usamos #pragma omp parallel sections para criar as threads
+        #pragma omp parallel sections
+        {
+            #pragma omp section
+            { // Tarefa A: Contorno Horizontal
+                for (int i = 0; i < NX; i++) {
+                    u_new[i][0] = u_new[i][NY-2];
+                    u_new[i][NY-1] = u_new[i][1];
+                    v_new[i][0] = v_new[i][NY-2];
+                    v_new[i][NY-1] = v_new[i][1];
                 }
             }
-            
-            #pragma omp sections
-            {
-                #pragma omp section
-                { // Tarefa A: Contorno Horizontal
-                    for (int i = 0; i < NX; i++) {
-                        u_new[i][0] = u_new[i][NY-2];
-                        u_new[i][NY-1] = u_new[i][1];
-                        v_new[i][0] = v_new[i][NY-2];
-                        v_new[i][NY-1] = v_new[i][1];
-                    }
+            #pragma omp section
+            { // Tarefa B: Contorno Vertical
+                for (int j = 0; j < NY; j++) {
+                    u_new[0][j] = u_new[NX-2][j];
+                    u_new[NX-1][j] = u_new[1][j];
+                    v_new[0][j] = v_new[NX-2][j];
+                    v_new[NX-1][j] = v_new[1][j];
                 }
-                #pragma omp section
-                { // Tarefa B: Contorno Vertical
-                    for (int j = 0; j < NY; j++) {
-                        u_new[0][j] = u_new[NX-2][j];
-                        u_new[NX-1][j] = u_new[1][j];
-                        v_new[0][j] = v_new[NX-2][j];
-                        v_new[NX-1][j] = v_new[1][j];
-                    }
-                }
-            } // Barreira implícita no final de 'sections'
+            }
+        } // Barreira implícita no final de 'sections'
             
-            #pragma omp single
-            {
-                double **temp_u = u;
-                double **temp_v = v;
-                u = u_new;
-                v = v_new;
-                u_new = temp_u;
-                v_new = temp_v;
-            } // Barreira implícita no final de 'single' para garantir que a troca foi feita antes do próximo 'step'
+        // Etapa 3: Troca de ponteiros (executada serialmente)
+        double **temp_u = u;
+        double **temp_v = v;
+        u = u_new;
+        v = v_new;
+        u_new = temp_u;
+        v_new = temp_v;
 
     } // Fim do loop de tempo
-    
     
     double end_time = omp_get_wtime();
     

@@ -2,9 +2,9 @@
 
 # --- PARÂMETROS DE CONFIGURAÇÃO ---
 # Nome do arquivo de código-fonte C
-CODIGO_C="navier_stokes_simul_serial_tempo.c"
+CODIGO_C="navier_stokes_serial.c"
 # Nome que daremos ao programa executável
-EXECUTAVEL="./solver_serial_temp"
+EXECUTAVEL="./navier_stokes_serial"
 # Número de vezes que o código será executado
 NUM_REPETICOES=5
 
