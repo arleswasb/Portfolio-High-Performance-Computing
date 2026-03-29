@@ -1,0 +1,13 @@
+Otimizacao;Laco;Tempo_s
+O0;Laco_1_Inicializacao;0.494470
+O0;Laco_2_Dependente;0.219840
+O0;Laco_3_Fator_4;0.104171
+O0;Laco_4_Fator_8;0.077334
+O2;Laco_1_Inicializacao;0.110146
+O2;Laco_2_Dependente;0.043594
+O2;Laco_3_Fator_4;0.047028
+O2;Laco_4_Fator_8;0.038286
+O3;Laco_1_Inicializacao;0.119745
+O3;Laco_2_Dependente;0.050808
+O3;Laco_3_Fator_4;0.046525
+O3;Laco_4_Fator_8;0.046904

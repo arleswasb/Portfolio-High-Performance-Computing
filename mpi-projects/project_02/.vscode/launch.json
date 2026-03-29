@@ -8,8 +8,13 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
+<<<<<<< HEAD
       "cwd": "c:/projetos_SD/projeto_SD_01",
       "program": "c:/projetos_SD/projeto_SD_01/build/Debug/outDebug",
+=======
+      "cwd": "c:/projetos_SD/projeto_SD_02",
+      "program": "c:/projetos_SD/projeto_SD_02/build/Debug/outDebug",
+>>>>>>> temp_repo/main
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
