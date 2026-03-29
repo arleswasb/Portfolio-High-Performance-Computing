@@ -1,0 +1,23 @@
+--------------------------------------------------------------------------
+WARNING: There was an error initializing an OpenFabrics device.
+
+  Local host:   r2n53
+  Local device: mlx5_0
+--------------------------------------------------------------------------
+Tamanho da Mensagem: 8 bytes, Tempo Médio por troca: 0.003615 ms
+Tamanho da Mensagem: 128 bytes, Tempo Médio por troca: 0.001539 ms
+Tamanho da Mensagem: 512 bytes, Tempo Médio por troca: 0.001745 ms
+Tamanho da Mensagem: 1024 bytes, Tempo Médio por troca: 0.001956 ms
+Tamanho da Mensagem: 4096 bytes, Tempo Médio por troca: 0.003592 ms
+Tamanho da Mensagem: 16384 bytes, Tempo Médio por troca: 0.004926 ms
+Tamanho da Mensagem: 65536 bytes, Tempo Médio por troca: 0.009873 ms
+Tamanho da Mensagem: 131072 bytes, Tempo Médio por troca: 0.015527 ms
+Tamanho da Mensagem: 262144 bytes, Tempo Médio por troca: 0.028153 ms
+Tamanho da Mensagem: 524288 bytes, Tempo Médio por troca: 0.050035 ms
+Tamanho da Mensagem: 1048576 bytes, Tempo Médio por troca: 0.092878 ms
+Tamanho da Mensagem: 4194304 bytes, Tempo Médio por troca: 0.349467 ms
+Tamanho da Mensagem: 8388608 bytes, Tempo Médio por troca: 0.690614 ms
+[r2n52.npad.internal:2244736] 1 more process has sent help message help-mpi-btl-openib.txt / error in device init
+[r2n52.npad.internal:2244736] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+Tamanho da Mensagem: 16777216 bytes, Tempo Médio por troca: 1.371698 ms
+Tamanho da Mensagem: 33554432 bytes, Tempo Médio por troca: 2.734311 ms
