@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Projeto PP 04
 
 Breve descrição do que este projeto faz e qual problema ele resolve.
@@ -327,4 +328,7 @@ A análise das cinco implementações, detalhada no relatório e na apresentaç�
 **Disciplina:** DCA3703 - Programação Paralela - T01 (2025.2)  
 **Docente:** Professor Doutor Samuel Xavier de Souza  
 **Instituição:** Universidade Federal do Rio Grande do Norte (UFRN)
+>>>>>>> temp_repo/main
+=======
+# projeto_PP_13
 >>>>>>> temp_repo/main
