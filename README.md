@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Projeto PP 04
 
 Breve descrição do que este projeto faz e qual problema ele resolve.
@@ -508,4 +509,7 @@ python3 plotar_grafico.py
 >>>>>>> temp_repo/main
 =======
 # projeto_PP_18
+>>>>>>> temp_repo/main
+=======
+# projeto_PP_19
 >>>>>>> temp_repo/main
